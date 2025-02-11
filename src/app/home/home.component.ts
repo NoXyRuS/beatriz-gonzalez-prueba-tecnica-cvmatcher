@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,4 +11,5 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class HomeComponent {
   nombre: string = 'Beatriz González';
+
 }

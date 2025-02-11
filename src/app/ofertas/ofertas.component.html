@@ -1,0 +1,15 @@
+<div class="buscador">
+    <label for="busqueda">Buscar trabajo:</label>
+    <input id="busqueda" type="text" [(ngModel)]="busqueda" placeholder="Buscar trabajo..." />
+  
+    <label for="filtro">Filtrar por:</label>
+    <select id="filtro" [(ngModel)]="filtro">
+      <option value="">Seleccionar filtro</option>
+      <option value="remoto">Remoto</option>
+      <option value="presencial">Presencial</option>
+      <option value="freelance">Freelance</option>
+    </select>
+  
+    <button (click)="buscar()">Buscar</button>
+  </div>
+  
