@@ -1,27 +1,15 @@
-# BeatrizGonzalezPruebaTecnicaCvmatcher
+Este proyecto fue generado con Angular CLI versión 17.3.11.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## Instalación de dependencias
+Antes de ejecutar el proyecto, instala las dependencias necesarias, incluyendo las de Angular Universal para SSR:
+`npm install`
 
-## Development server
+## Servidor de desarrollo
+Ejecuta `npm run dev:ssr` para iniciar el servidor de desarrollo con Server-Side Rendering (SSR). La aplicación estará disponible en `http://localhost:4200/`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Construcción
+Ejecuta `ng build` para construir el proyecto. Los archivos generados se almacenarán en el directorio `dist/`.
 
-## Code scaffolding
+## Detalles sobre SSR
+Este proyecto usa Server-Side Rendering (SSR) para mejorar el rendimiento y la optimización en motores de búsqueda.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
