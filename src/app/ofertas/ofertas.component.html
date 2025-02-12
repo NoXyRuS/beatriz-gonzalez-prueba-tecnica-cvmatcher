@@ -1,15 +1,72 @@
-<div class="buscador">
-    <label for="busqueda">Buscar trabajo:</label>
-    <input id="busqueda" type="text" [(ngModel)]="busqueda" placeholder="Buscar trabajo..." />
-  
-    <label for="filtro">Filtrar por:</label>
-    <select id="filtro" [(ngModel)]="filtro">
-      <option value="">Seleccionar filtro</option>
-      <option value="remoto">Remoto</option>
-      <option value="presencial">Presencial</option>
-      <option value="freelance">Freelance</option>
+<div class="container">
+    <div class="buscador">
+        <div class="input-group">
+            <span class="material-icons">search</span>
+            <input [(ngModel)]="busqueda" id="busqueda" type="text" placeholder="Buscar empleo..." class="input-buscador" />
+        </div>
+
+        <div class="input-group">
+            <span class="material-icons">location_on</span>
+            <input [(ngModel)]="lugar" id="lugar" type="text" placeholder="Lugar" class="input-buscador" />
+        </div>
+
+        <button (click)="buscar()" class="btn-buscar">Buscar</button>
+    </div>
+</div>
+
+<div class="container-filtros">
+    <select [(ngModel)]="filtroExperiencia" class="select-filtro" aria-label="Filtrar por experiencia" (change)="actualizarFiltros()">
+      <option value="">Experiencia</option>
+      <option *ngFor="let experiencia of experienciasDisponibles" [value]="experiencia">{{ experiencia }} años</option>
     </select>
   
-    <button (click)="buscar()">Buscar</button>
-  </div>
+    <select [(ngModel)]="filtroSalario" class="select-filtro" aria-label="Filtrar por salario" (change)="actualizarFiltros()">
+      <option value="">Salario</option>
+      <option *ngFor="let salario of salariosDisponibles" [value]="salario">{{ salario }}</option>
+    </select>
+</div>
+
+<div class="cuerpo">
+    <div class="content">
+        <div class="ofertas-container">
+            <div class="contador-ofertas">
+                <p><strong>{{ totalOfertas }}</strong> empleos encontrados.</p>
+            </div>
+            <div class="card" *ngFor="let oferta of ofertas" (click)="toggleOfertas(oferta)">
+                <div class="card-header">
+                    <h3><strong>{{ oferta.title }}</strong></h3>
+                    <p>{{ oferta.company }}</p>
+                </div>
+                <div class="card-body">
+                    <p>{{ oferta.location }}</p>
+                    <p><strong>Publicado el </strong> {{ oferta.posted_date | date }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="oferta-detalle" *ngIf="ofertaSeleccionada">
+            <h2><strong>{{ ofertaSeleccionada.title }}</strong></h2>
+            <p> {{ ofertaSeleccionada.company }}</p>
+            <p>{{ ofertaSeleccionada.location }}</p>
+            <p>Publicado el {{ ofertaSeleccionada.posted_date | date }}</p>
+            <div class="contenedor-btn">
+                <a [href]="ofertaSeleccionada.url" target="_blank" class="btn">Ir a la oferta</a>
+
+            </div>
+            <hr class="separador">
+            <p><strong>Información del empleo</strong></p>
+            <p style="white-space: pre-line;">{{ ofertaSeleccionada.description }}</p>
+            <p><strong>Fecha de expiración:</strong> {{ ofertaSeleccionada.expiration_date | date }}</p>
+            <p><strong>Salario:</strong> S/ {{ ofertaSeleccionada.salary_min }} - S/ {{ ofertaSeleccionada.salary_max }}</p>
+            <p><strong>Habilidades Técnicas:</strong> {{ ofertaSeleccionada.technical_skills || 'No especificado' }}</p>
+            <p><strong>Experiencia:</strong> {{ ofertaSeleccionada.years_experience }} años</p>
+            <p><strong>Modalidad:</strong> {{ ofertaSeleccionada.work_modality_id }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
   
