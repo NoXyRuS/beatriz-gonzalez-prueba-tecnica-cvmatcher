@@ -124,50 +124,111 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-.oferta-detalle h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.oferta-detalle p .material-icons {
+    color: #000000;  
+    vertical-align: middle; 
+    margin-right: 10px; 
 }
 
-.oferta-detalle p {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.company-logo-detalle {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.details h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.details p {
     font-size: 16px;
-    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 .contenedor-btn {
     display: flex;
     justify-content: flex-end; 
-  }
-  
-  .btn {
-      padding: 12px 18px;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 15px;
-      text-align: center;
-      font-weight: bold;
-      transition: background 0.3s ease;
-  }
+}
+
+.btn {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
 
 .btn:hover {
     background-color: #0056b3;
 }
 
+.separador {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
 @media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: stretch;
+    .oferta-detalle {
+        padding: 15px;
     }
 
-    .ofertas-container, .oferta-detalle {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .company-logo {
+        margin-bottom: 10px;
+    }
+
+    .details {
+        margin-left: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer .btn {
         width: 100%;
-        max-height: none;
+        margin-top: 10px;
     }
 }
+
 
 .contador-ofertas {
     background-color: #ffffff;
@@ -224,4 +285,18 @@
     display: block;
     margin-bottom: 5px;
   }
-  
+  .company-info {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.location-text{
+    opacity: 0.6;
+}
